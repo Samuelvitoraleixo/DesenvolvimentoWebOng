@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VerdeVivo — ONG Ambiental (SPA)</title>
+<meta name="description" content="ONG VerdeVivo: preservando o meio ambiente — SPA acessível, responsiva e otimizada.">
+<link rel="stylesheet" href="assets/style.min.css">
+</head>
+<body class="theme-default">
+<a class="skip-link" href="#main">Ir para o conteúdo</a>
+<header class="site-header" role="banner">
+  <div class="container">
+    <h1><a href="#" data-link="/" aria-label="Ir para a página inicial">VerdeVivo</a></h1>
+    <p class="tagline">Cuidando do planeta, inspirando gerações</p>
+
+    <button id="btnToggleNav" class="hamburger" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="main-nav" class="nav" role="navigation" aria-label="Navegação principal">
+      <ul class="nav-list" role="menubar">
+        <li role="none"><a role="menuitem" href="#" data-link="/" tabindex="0">Início</a></li>
+        <li role="none" class="has-submenu">
+          <a role="menuitem" href="#" aria-haspopup="true" aria-expanded="false" tabindex="0">Projetos ▾</a>
+          <ul class="submenu" role="menu" aria-label="Submenu Projetos">
+            <li role="none"><a role="menuitem" href="#/projetos" data-link="/projetos" tabindex="-1">Refloresta Já</a></li>
+            <li role="none"><a role="menuitem" href="#/projetos" data-link="/projetos" tabindex="-1">Educa Verde</a></li>
+          </ul>
+        </li>
+        <li role="none"><a role="menuitem" href="#" data-link="/cadastro" tabindex="0">Cadastre-se</a></li>
+      </ul>
+    </nav>
+
+    <div class="controls">
+      <button id="themeToggle" aria-pressed="false">Modo Escuro</button>
+      <button id="contrastToggle" aria-pressed="false">Alto Contraste</button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="container" role="main" tabindex="-1" aria-live="polite"></main>
+
+<!-- Templates (in JS) and scripts -->
+<script src="assets/app.min.js" defer></script>
+</body>
+</html>

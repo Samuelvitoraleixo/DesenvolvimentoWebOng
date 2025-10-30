@@ -1,0 +1,119 @@
+/* Design system tokens */
+:root{
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+
+  --font-xs: 12px;
+  --font-sm: 14px;
+  --font-md: 16px;
+  --font-lg: 20px;
+  --font-xl: 28px;
+
+  /* palette: 8 colors */
+  --color-primary: #2e7d32;
+  --color-primary-700: #27632a;
+  --color-secondary: #2a7ae2;
+  --color-accent: #ffb300;
+  --color-success: #2e7d32;
+  --color-warning: #ff8f00;
+  --color-danger: #d32f2f;
+  --color-neutral-900: #111;
+  --color-neutral-700: #555;
+  --color-neutral-100: #f5f7f5;
+  --bg: var(--color-neutral-100);
+
+  --max-width: 1100px;
+}
+
+/* High-contrast and dark theme overrides */
+:root.high-contrast{
+  --color-primary: #000000;
+  --color-secondary: #ffffff;
+  --bg: #ffff00;
+  --color-neutral-900: #000;
+}
+
+@media (prefers-color-scheme: dark){
+  :root.theme-default{
+    --bg: #0b0f0a;
+    --color-neutral-100: #061006;
+    --color-neutral-900: #eee;
+  }
+}
+
+/* Base */
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;background:var(--bg);color:var(--color-neutral-900);line-height:1.4;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--max-width);margin:0 auto;padding:var(--space-2)}
+
+/* Accessibility: visible focus */
+:focus{outline:3px solid var(--color-accent);outline-offset:2px}
+
+/* Skip link */
+.skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{position:static;width:auto;height:auto;padding:.5rem;background:#000;color:#fff;z-index:1000}
+
+/* Header and nav */
+.site-header{background:linear-gradient(90deg,#eaf7ea,#dff0df);padding:var(--space-2);display:block}
+.site-header .container{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:var(--space-2)}
+.site-header h1{margin:0;font-size:var(--font-xl)}
+.tagline{margin:0;font-size:var(--font-sm);color:var(--color-neutral-700)}
+
+/* Hamburger */
+.hamburger{display:none;background:transparent;border:0;padding:8px;cursor:pointer}
+.hamburger span{display:block;width:22px;height:2px;background:var(--color-neutral-900);margin:4px 0}
+
+/* Nav */
+.nav{}
+.nav-list{list-style:none;padding:0;margin:0;display:flex;gap:var(--space-2);align-items:center}
+.nav-list a{color:var(--color-neutral-900);text-decoration:none;padding:8px;border-radius:4px}
+.nav-list a:focus,.nav-list a:hover{background:rgba(0,0,0,0.05)}
+
+/* Submenu */
+.has-submenu{position:relative}
+.submenu{position:absolute;left:0;top:100%;background:white;padding:8px;border:1px solid rgba(0,0,0,0.08);display:none;min-width:200px}
+.has-submenu[aria-expanded="true"] .submenu{display:block}
+
+/* Grid system: 12 columns */
+.row{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--space-3)}
+.col-6{grid-column:span 6}
+.col-4{grid-column:span 4}
+.col-12{grid-column:span 12}
+
+/* Cards */
+.project-card{background:white;padding:var(--space-3);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+
+/* Buttons */
+.button{display:inline-block;padding:8px 12px;border-radius:6px;border:0;background:var(--color-primary);color:white;text-decoration:none;cursor:pointer}
+.button.secondary{background:transparent;color:var(--color-primary);border:1px solid var(--color-primary)}
+
+/* Forms */
+form label{display:block;margin-top:var(--space-2);font-size:var(--font-sm)}
+input,textarea,select{width:100%;padding:8px;border:1px solid #ccc;border-radius:6px;font-size:var(--font-md)}
+
+/* Toasts and modals */
+.toast{position:fixed;right:var(--space-2);bottom:var(--space-2);background:#222;color:#fff;padding:12px;border-radius:8px;display:none}
+.toast.show{display:block}
+
+/* Responsive breakpoints (5 breakpoints) */
+@media (max-width:1280px){:root{--max-width:1000px}}
+@media (max-width:1024px){.site-header .container{grid-template-columns:1fr auto}}
+@media (max-width:768px){
+  .nav-list{display:none}
+  .hamburger{display:block}
+  .site-header .container{grid-template-columns:1fr auto}
+  .row{gap:var(--space-2)}
+}
+@media (max-width:480px){
+  .container{padding:var(--space-1)}
+  .site-header h1{font-size:var(--font-lg)}
+}
+@media (max-width:320px){:root{--font-md:14px}}
+
+/* Utility */
+.hidden{display:none !important}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
