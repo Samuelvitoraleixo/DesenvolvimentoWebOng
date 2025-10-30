@@ -1,47 +1,45 @@
+<!-- ...existing code... -->
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="theme-default">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>VerdeVivo — ONG Ambiental (SPA)</title>
-<meta name="description" content="ONG VerdeVivo: preservando o meio ambiente — SPA acessível, responsiva e otimizada.">
-<link rel="stylesheet" href="assets/style.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>VerdeVivo — ONG Ambiental (SPA)</title>
+  <meta name="description" content="ONG VerdeVivo: preservando o meio ambiente — SPA acessível, responsiva e otimizada.">
+  <!-- garante que URLs relativas resolvam a partir da raiz do servidor -->
+  <base href="/">
+  <link rel="stylesheet" href="/style.css">
 </head>
-<body class="theme-default">
-<a class="skip-link" href="#main">Ir para o conteúdo</a>
-<header class="site-header" role="banner">
-  <div class="container">
-    <h1><a href="#" data-link="/" aria-label="Ir para a página inicial">VerdeVivo</a></h1>
-    <p class="tagline">Cuidando do planeta, inspirando gerações</p>
+<body>
+  <a class="skip-link" href="#main">Ir para o conteúdo</a>
 
-    <button id="btnToggleNav" class="hamburger" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav id="main-nav" class="nav" role="navigation" aria-label="Navegação principal">
-      <ul class="nav-list" role="menubar">
-        <li role="none"><a role="menuitem" href="#" data-link="/" tabindex="0">Início</a></li>
-        <li role="none" class="has-submenu">
-          <a role="menuitem" href="#" aria-haspopup="true" aria-expanded="false" tabindex="0">Projetos ▾</a>
-          <ul class="submenu" role="menu" aria-label="Submenu Projetos">
-            <li role="none"><a role="menuitem" href="#/projetos" data-link="/projetos" tabindex="-1">Refloresta Já</a></li>
-            <li role="none"><a role="menuitem" href="#/projetos" data-link="/projetos" tabindex="-1">Educa Verde</a></li>
-          </ul>
-        </li>
-        <li role="none"><a role="menuitem" href="#" data-link="/cadastro" tabindex="0">Cadastre-se</a></li>
-      </ul>
-    </nav>
-
-    <div class="controls">
-      <button id="themeToggle" aria-pressed="false">Modo Escuro</button>
-      <button id="contrastToggle" aria-pressed="false">Alto Contraste</button>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="brand">VerdeVivo</h1>
+      <button id="btnToggleNav" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu">☰</button>
+      <nav id="main-nav" class="main-nav" role="navigation" aria-label="Menu principal">
+        <ul>
+          <li><a data-link="/" href="/">Início</a></li>
+          <li><a data-link="/projetos" href="/projetos">Projetos</a></li>
+          <li><a data-link="/cadastro" href="/cadastro">Cadastre-se</a></li>
+        </ul>
+        <div class="toolbar">
+          <button id="themeToggle" class="icon-btn" aria-pressed="false" aria-label="Alternar tema escuro">🌓</button>
+          <button id="contrastToggle" class="icon-btn" aria-pressed="false" aria-label="Alternar alto contraste">⚫⚪</button>
+        </div>
+      </nav>
     </div>
-  </div>
-</header>
+  </header>
 
-<main id="main" class="container" role="main" tabindex="-1" aria-live="polite"></main>
+  <main id="main" tabindex="-1" class="container">
+    <!-- Conteúdo dinâmico será renderizado aqui -->
+  </main>
 
-<!-- Templates (in JS) and scripts -->
-<script src="assets/app.min.js" defer></script>
+  <footer class="site-footer container">
+    <p>© VerdeVivo — Todos os direitos reservados</p>
+  </footer>
+
+  <script src="/app.js" defer></script>
 </body>
 </html>
+<!-- ...existing code... -->
